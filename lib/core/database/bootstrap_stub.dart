@@ -1,0 +1,1 @@
+Future<void> bootstrapDatabaseImpl() async {}
