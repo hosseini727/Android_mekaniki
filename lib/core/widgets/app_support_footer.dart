@@ -20,7 +20,7 @@ class AppSupportFooter extends StatelessWidget {
           shadowColor: AppColors.line,
           borderRadius: BorderRadius.circular(8),
           child: InkWell(
-            onTap: () => launchUrl(Uri.parse('tel:${AppInfo.supportPhone}')),
+            onTap: () => launchUrl(Uri.parse(AppInfo.websiteUrl), mode: LaunchMode.externalApplication),
             borderRadius: BorderRadius.circular(8),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
@@ -29,15 +29,15 @@ class AppSupportFooter extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: AppColors.line.withValues(alpha: 0.6)),
               ),
-              child: Directionality(
-                textDirection: TextDirection.rtl,
+              child: const Directionality(
+                textDirection: TextDirection.ltr,
                 child: Text(
-                  'مشاوره و پشتیبانی · ${AppInfo.supportPhone}',
+                  AppInfo.website,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: AppColors.muted.withValues(alpha: 0.85),
-                    fontSize: 9,
-                    fontWeight: FontWeight.w600,
+                    color: AppColors.muted,
+                    fontSize: 11,
+                    fontWeight: FontWeight.w700,
                     height: 1.2,
                   ),
                 ),
